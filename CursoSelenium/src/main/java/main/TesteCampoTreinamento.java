@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import util.RadioBtn;
 import util.TextFields;
 
 public class TesteCampoTreinamento {
@@ -15,6 +16,7 @@ public class TesteCampoTreinamento {
 	static WebDriver driver;
 	
 	TextFields textFields;
+	RadioBtn rdbtn;
 	
 	@Before
 	public void iniciar() {
@@ -24,6 +26,7 @@ public class TesteCampoTreinamento {
 		driver.manage().window().maximize();
 		
 		textFields = new TextFields(driver);
+		rdbtn = new RadioBtn(driver);
 	}
 	
 	@After
@@ -40,5 +43,7 @@ public class TesteCampoTreinamento {
 		pegandoUrl();
 		textFields.nomeTest("Fernando");
 		textFields.sobrenomeTest("Ribeiro");
+		rdbtn.radioMasculinoTeste();
 	}
+	
 }
