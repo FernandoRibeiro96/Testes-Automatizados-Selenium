@@ -15,6 +15,9 @@ public class TextFields extends PageObjects{
 	@FindBy(id="elementosForm:sobrenome")
 	private WebElement sobrenome;
 	
+	@FindBy(id="elementosForm:sugestoes")
+	private WebElement sugestoes;
+	
 	public TextFields(WebDriver driver) {
 		super(driver);
 	}
@@ -27,5 +30,9 @@ public class TextFields extends PageObjects{
 	public void sobrenomeTest(String sobrenomeCampo) {
 		sobrenome.sendKeys(sobrenomeCampo);
 		Assert.assertEquals("Ribeiro", sobrenome.getAttribute("value"));
+	}
+	
+	public void sugestoesTest(String sugestao) {
+		sugestoes.sendKeys(sugestao);
 	}
 }
